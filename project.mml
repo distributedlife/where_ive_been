@@ -1,0 +1,4472 @@
+{
+  "bounds": [
+    -180,
+    -85.0511,
+    180,
+    85.0511
+  ],
+  "center": [
+    36.5625,
+    50.9584,
+    2
+  ],
+  "format": "jpeg90",
+  "interactivity": {
+    "layer": "country-interaction",
+    "template_teaser": "<div style=\"text-align:center;\">\n\n<img src=\"data:image/png;base64,{{flag_png}}\" style=\"-moz-box-shadow:0px 1px 3px #222;-webkit-box-shadow:0px 1px 5px #222;box-shadow:0px 1px 3px #222;\"><br>\n<strong>{{admin}}</strong>\n\n</div>",
+    "template_full": "",
+    "template_location": "",
+    "fields": [
+      "flag_png",
+      "admin"
+    ]
+  },
+  "minzoom": 0,
+  "maxzoom": 9,
+  "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+  "Stylesheet": [
+    "style.mss",
+    "labels.mss",
+    "rainbow.mss"
+  ],
+  "Layer": [
+    {
+      "id": "country",
+      "name": "country",
+      "srs": "",
+      "class": "",
+      "Datasource": {
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-admin-0-countries.zip"
+      },
+      "geometry": "polygon"
+    },
+    {
+      "id": "rivers",
+      "name": "rivers",
+      "srs": "",
+      "class": "",
+      "geometry": "linestring",
+      "Datasource": {
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/physical/10m-rivers-lake-centerlines.zip"
+      }
+    },
+    {
+      "id": "lakes",
+      "name": "lakes",
+      "srs": "",
+      "class": "",
+      "Datasource": {
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/physical/10m-lakes.zip",
+        "id": "lakes",
+        "project": "geography-class",
+        "srs": null
+      },
+      "geometry": "polygon"
+    },
+    {
+      "id": "state",
+      "name": "state",
+      "srs": "",
+      "class": "",
+      "Datasource": {
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-admin-1-states-provinces-lines.zip",
+        "id": "state",
+        "project": "geography-class",
+        "srs": ""
+      },
+      "geometry": "linestring"
+    },
+    {
+      "id": "admin-0-line-disputed",
+      "name": "admin-0-line-disputed",
+      "srs": "",
+      "class": "border disputed",
+      "Datasource": {
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-admin-0-boundary-lines-claims.zip"
+      },
+      "geometry": "linestring"
+    },
+    {
+      "id": "admin-0-line-land",
+      "name": "admin-0-line-land",
+      "srs": "",
+      "class": "border country",
+      "Datasource": {
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-admin-0-boundary-lines-land.zip"
+      },
+      "geometry": "linestring"
+    },
+    {
+      "id": "glacier",
+      "name": "glacier",
+      "srs": "",
+      "class": "",
+      "Datasource": {
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/physical/10m-glaciated-areas.zip"
+      },
+      "geometry": "polygon"
+    },
+    {
+      "id": "geo-lines",
+      "name": "geo-lines",
+      "srs": "",
+      "class": "",
+      "Datasource": {
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/physical/10m-geographic-lines.zip"
+      },
+      "geometry": "linestring"
+    },
+    {
+      "id": "country-name",
+      "name": "country-name",
+      "srs": "",
+      "class": "",
+      "Datasource": {
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-admin-0-country-points.zip",
+        "id": "country-name",
+        "project": "geography-class",
+        "srs": null
+      },
+      "geometry": "point"
+    },
+    {
+      "id": "cities",
+      "name": "cities",
+      "srs": "",
+      "class": "",
+      "Datasource": {
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-populated-places-simple.zip",
+        "id": "cities",
+        "project": "geography-class",
+        "srs": ""
+      },
+      "geometry": "point"
+    },
+    {
+      "id": "country-interaction",
+      "name": "country-interaction",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "class": "",
+      "Datasource": {
+        "file": "layers/country-interaction.geojson",
+        "id": "country-interaction",
+        "project": "geography-class",
+        "srs": null
+      },
+      "geometry": "polygon",
+      "status": "off"
+    },
+    {
+      "geometry": "point",
+      "extent": [
+        -74.582617,
+        -16.409047,
+        139.62242,
+        59.93428
+      ],
+      "id": "customcitiescsv",
+      "class": "",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/cities.csv",
+        "id": "customcitiescsv",
+        "project": "geography-class",
+        "srs": ""
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "customcitiescsv"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        139.6228,
+        35.713620000000006,
+        139.8985,
+        36.559470000000005
+      ],
+      "id": "toykonikko",
+      "class": "train",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/toyko-nikko.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "toykonikko"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        108.31550000000001,
+        22.82282,
+        116.31500000000001,
+        39.89444
+      ],
+      "id": "nanningbeijing",
+      "class": "train",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/nanning-beijing.geojson",
+        "id": "nanningbeijing",
+        "project": "geography-class",
+        "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "nanningbeijing"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        106.88390000000001,
+        39.902420000000006,
+        116.4257,
+        47.90863000000001
+      ],
+      "id": "beijingulaanbaatar",
+      "class": "train",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/beijing-ulaanbaatar.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "beijingulaanbaatar"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        105.9307,
+        47.90863000000001,
+        107.6187,
+        51.84053
+      ],
+      "id": "ulaanbaatarulanude",
+      "class": "train",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/ulaanbaatar-ulan-ude.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "ulaanbaatarulanude"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        103.72410000000002,
+        51.41281000000001,
+        107.5828,
+        52.28323
+      ],
+      "id": "ulanudeirkutsk",
+      "class": "train",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/ulan-ude-irkutsk.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "ulanudeirkutsk"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        92.82822,
+        52.28323,
+        104.2604,
+        56.24992
+      ],
+      "id": "irkutskkrasnoyarsk",
+      "class": "train",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/irkutsk-krasnoyarsk.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "irkutskkrasnoyarsk"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        60.60378000000001,
+        54.940000000000005,
+        92.82822,
+        57.14518000000001
+      ],
+      "id": "krasnoyarskekaterinb",
+      "class": "train",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/krasnoyarsk-ekaterinberg.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "krasnoyarskekaterinb"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        49.65305000000001,
+        57.90543000000001,
+        56.1779,
+        58.577650000000006
+      ],
+      "id": "permkirov",
+      "class": "train",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/perm-kirov.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "permkirov"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        49.235730000000004,
+        55.80467,
+        53.35609,
+        58.577650000000006
+      ],
+      "id": "kirovkazan",
+      "class": "train",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/kirov-kazan.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "kirovkazan"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        56.1779,
+        56.85927,
+        60.60378000000001,
+        58.00446000000001
+      ],
+      "id": "ekaterinbergperm",
+      "class": "train",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/ekaterinberg-perm.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "ekaterinbergperm"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        30.362220000000008,
+        55.77639000000001,
+        37.655,
+        59.929719999999996
+      ],
+      "id": "saintpetersburgmosco",
+      "class": "train",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/saint-petersburg-moscow.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "saintpetersburgmosco"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        102.61166000000001,
+        1.4451100000000001,
+        103.76934000000001,
+        2.58524
+      ],
+      "id": "singaporegemas",
+      "class": "train",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/singapore-gemas.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "singaporegemas"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        101.9171,
+        2.5775300000000003,
+        102.61170000000003,
+        6.11842
+      ],
+      "id": "gemaskotabharu",
+      "class": "train",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/gemas-kota-bharu.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "gemaskotabharu"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        101.6782,
+        2.45208,
+        102.61170000000003,
+        3.1396200000000003
+      ],
+      "id": "gemaskualalumpur",
+      "class": "train",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/gemas-kuala-lumpur.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "gemaskualalumpur"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        100.36640000000001,
+        4.597580000000001,
+        101.0729,
+        5.393330000000001
+      ],
+      "id": "ipohbutterworth",
+      "class": "train",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/ipoh-butterworth.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "ipohbutterworth"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        101.69514000000002,
+        2.2002200000000003,
+        102.31106000000001,
+        3.166270000000001
+      ],
+      "id": "kualalumpurmalacca",
+      "class": "bus",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/kuala-lumpur-malacca.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "kualalumpurmalacca"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        101.26792,
+        3.1377400000000004,
+        101.70078000000001,
+        4.470820000000001
+      ],
+      "id": "kualalumpurtanahrata",
+      "class": "bus",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/kuala-lumpur-tanah-rata.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "kualalumpurtanahrata"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        101.08242000000001,
+        4.4705200000000005,
+        101.42962000000001,
+        4.601120000000001
+      ],
+      "id": "tanahrataipoh",
+      "class": "bus",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/tanah-rata-ipoh.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "tanahrataipoh"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        113.97884,
+        4.362100000000001,
+        114.94808000000002,
+        4.97318
+      ],
+      "id": "miribanderseribegawa",
+      "class": "bus",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/miri-bander-seri-begawan.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "miribanderseribegawa"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        111.84478000000001,
+        2.2795400000000003,
+        114.06230000000002,
+        4.41476
+      ],
+      "id": "sibumiri",
+      "class": "bus",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/sibu-miri.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "sibumiri"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        102.97384000000001,
+        13.10233,
+        103.85638,
+        13.63319
+      ],
+      "id": "siemreapbattambang",
+      "class": "bus",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/siem-reap-battambang.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "siemreapbattambang"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        103.19582000000001,
+        11.62235,
+        104.90980000000002,
+        13.10655
+      ],
+      "id": "battambangphnompenh",
+      "class": "bus",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/battambang-phnom-penh.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "battambangphnompenh"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        104.91310000000001,
+        10.76937,
+        106.69470000000001,
+        11.75656
+      ],
+      "id": "phnompenhhochiminhci",
+      "class": "bus",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/phnom-penh-ho-chi-minh-city.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "phnompenhhochiminhci"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        106.69336000000003,
+        10.768630000000002,
+        108.47118,
+        11.927100000000001
+      ],
+      "id": "hochiminhcitydalat",
+      "class": "bus",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/ho-chi-minh-city-da-lat.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "hochiminhcitydalat"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        108.17876000000001,
+        15.87888,
+        108.32786000000002,
+        16.08746
+      ],
+      "id": "dananghoian",
+      "class": "bus",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/da-nang-hoi-an.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "dananghoian"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        108.17982000000002,
+        11.946150000000001,
+        109.40084,
+        16.06799
+      ],
+      "id": "dalatdanang",
+      "class": "bus",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/da-lat-da-nang.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "dalatdanang"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        107.57780000000001,
+        16.06239,
+        108.20930000000001,
+        16.456540000000004
+      ],
+      "id": "dananghue",
+      "class": "train",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/da-nang-hue.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "dananghue"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        105.566,
+        16.456540000000004,
+        107.57780000000001,
+        21.024600000000007
+      ],
+      "id": "huehanoi",
+      "class": "train",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/hue-ha-noi.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "huehanoi"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        113.55810000000001,
+        22.16383,
+        114.15790000000001,
+        22.294130000000006
+      ],
+      "id": "hongkongmacau",
+      "class": "ferry",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/hong-kong-macau.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "hongkongmacau"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        110.397931412,
+        1.554644076,
+        111.829446622,
+        2.29083391
+      ],
+      "id": "kuchingsibu",
+      "class": "ferry",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/kuching-sibu.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "kuchingsibu"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        110.347852778,
+        1.548604935,
+        110.46009252900001,
+        1.730415519
+      ],
+      "id": "kuchingnp",
+      "class": "hike",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/kuching-np.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "kuchingnp"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        100.332695751,
+        5.393848418000001,
+        100.365854348,
+        5.415997005
+      ],
+      "id": "butterworthgeorgetow",
+      "class": "ferry",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/butterworth-george-town.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "butterworthgeorgetow"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        30.362220000000008,
+        55.772270000000006,
+        49.10528,
+        59.929719999999996
+      ],
+      "id": "kazansaintpetersburg",
+      "class": "train",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/kazan-saint-petersburg.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "kazansaintpetersburg"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        132.30542,
+        34.301950000000005,
+        132.32112,
+        34.31094
+      ],
+      "id": "hiroshimamiyahima",
+      "class": "ferry",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/hiroshima-miyahima.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "hiroshimamiyahima"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        132.3026,
+        34.312270000000005,
+        132.4281,
+        34.398120000000006
+      ],
+      "id": "hiroshimamiyajima0",
+      "class": "train",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/hiroshima-miyajima-0.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "hiroshimamiyajima0"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        132.47490000000002,
+        34.34281,
+        135.758,
+        34.98648
+      ],
+      "id": "kyotohiroshima",
+      "class": "train",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/kyoto-hiroshima.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "kyotohiroshima"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        27.58585,
+        53.89083,
+        37.58028,
+        55.77639000000001
+      ],
+      "id": "moscowminsk",
+      "class": "train",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/moscow-minsk.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "moscowminsk"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        23.68306,
+        52.10087000000001,
+        27.58585,
+        53.89083
+      ],
+      "id": "minskbrest",
+      "class": "train",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/minsk-brest.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "minskbrest"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        -77.03379000000001,
+        -16.65949,
+        -71.54379,
+        -12.06338
+      ],
+      "id": "limaarequipa",
+      "class": "bus",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/lima-arequipa.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "limaarequipa"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        -71.96696,
+        -16.45392,
+        -71.15836,
+        -13.531860000000002
+      ],
+      "id": "arequipacusco",
+      "class": "bus",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/arequipa-cusco.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "arequipacusco"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        -72.483953663,
+        -13.53195,
+        -71.967463,
+        -13.214067448
+      ],
+      "id": "inkatrek",
+      "class": "hike",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/inka-trek.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "inkatrek"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        -71.980527271,
+        -15.671687079,
+        -71.596526468,
+        -15.583378504
+      ],
+      "id": "colcatrek",
+      "class": "hike",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/colca-trek.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "colcatrek"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        -75.26816366371452,
+        -8.374596009304833,
+        -73.15111776228206,
+        -3.712255308324658
+      ],
+      "id": "pulcalpaiquitos",
+      "class": "ferry",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/pulcalpa-iquitos.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "pulcalpaiquitos"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        21.051570000000005,
+        51.93081,
+        23.68306,
+        52.25623
+      ],
+      "id": "brestwarsaw",
+      "class": "train",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/brest-warsaw.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "brestwarsaw"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        16.892100000000003,
+        48.75365000000001,
+        21.00337,
+        52.2293
+      ],
+      "id": "warsawbratislava",
+      "class": "train",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/warsaw-bratislava.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "warsawbratislava"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        17.10694,
+        47.768750000000004,
+        19.13307,
+        48.21925
+      ],
+      "id": "bratislavabudapest",
+      "class": "train",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/bratislava-budapest.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "bratislavabudapest"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        19.08507,
+        44.447140000000005,
+        26.07644,
+        47.50039
+      ],
+      "id": "budapestbucharest",
+      "class": "train",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/budapest-bucharest.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "budapestbucharest"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        25.605700000000002,
+        45.648990000000005,
+        25.690330000000003,
+        45.71681
+      ],
+      "id": "brasovharman",
+      "class": "bus",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/brasov-harman.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "brasovharman"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        24.16158,
+        45.65775000000001,
+        25.613660000000003,
+        45.84010000000001
+      ],
+      "id": "brasovsibiu",
+      "class": "train",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/brasov-sibiu.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "brasovsibiu"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        23.989980000000003,
+        45.05655,
+        24.37609,
+        45.82146
+      ],
+      "id": "sibiuhorezu",
+      "class": "bus",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/sibiu-horezu.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "sibiuhorezu"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        25.46076,
+        45.59447,
+        25.597630000000002,
+        45.66842000000001
+      ],
+      "id": "brasovrasnov",
+      "class": "bus",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/brasov-rasnov.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "brasovrasnov"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        25.370030000000003,
+        45.51599,
+        25.46076,
+        45.59447
+      ],
+      "id": "rasnovbran",
+      "class": "bus",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/rasnov-bran.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "rasnovbran"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        23.587280000000003,
+        46.77788,
+        26.266170000000002,
+        47.71444
+      ],
+      "id": "clujnapocasuceava",
+      "class": "train",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/cluj-napoca-suceava.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "clujnapocasuceava"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        26.127910000000007,
+        44.447340000000004,
+        27.215970000000002,
+        47.65513000000001
+      ],
+      "id": "suceavabucharest",
+      "class": "train",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/suceava-bucharest.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "suceavabucharest"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        25.964240000000004,
+        43.84997000000001,
+        26.1045,
+        44.44107
+      ],
+      "id": "bucharestruse",
+      "class": "train",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/bucharest-ruse.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "bucharestruse"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        24.066840000000003,
+        45.800140000000006,
+        24.780520000000003,
+        46.2417
+      ],
+      "id": "sibiusighisoara",
+      "class": "train",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/sibiu-sighisoara.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "sibiusighisoara"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        23.587280000000003,
+        46.086830000000006,
+        24.780520000000003,
+        46.792730000000006
+      ],
+      "id": "sighisoaraclujnapoca",
+      "class": "train",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/sighisoara-cluj-napoca.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "sighisoaraclujnapoca"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        23.32074,
+        42.711980000000004,
+        25.95755,
+        43.83496
+      ],
+      "id": "rusesofia",
+      "class": "train",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/ruse-sofia.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "rusesofia"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        23.037540000000003,
+        42.055240000000005,
+        23.34052,
+        42.72008
+      ],
+      "id": "sofiarila",
+      "class": "car",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/sofia-rila.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "sofiarila"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        23.32074,
+        42.12523,
+        24.746780000000005,
+        42.711980000000004
+      ],
+      "id": "sofiaplovdiv",
+      "class": "train",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/sofia-plovdiv.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "sofiaplovdiv"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        24.731070000000003,
+        42.13662,
+        25.78431,
+        43.07386
+      ],
+      "id": "plovdivvelikotarnovo",
+      "class": "bus",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/plovdiv-veliko-tarnovo.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "plovdivvelikotarnovo"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        25.39403,
+        42.340520000000005,
+        27.4754,
+        43.07386
+      ],
+      "id": "vtburgas",
+      "class": "bus",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/vt-burgas.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "vtburgas"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        27.11267,
+        41.0155,
+        28.976840000000003,
+        42.493170000000006
+      ],
+      "id": "burgasistanbul",
+      "class": "bus",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/burgas-istanbul.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "burgasistanbul"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        25.923650000000002,
+        43.69820000000001,
+        26.003790000000002,
+        43.85833
+      ],
+      "id": "ruseivanovo",
+      "class": "train",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/ruse-ivanovo.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "ruseivanovo"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        25.308400000000002,
+        42.73002,
+        25.636420000000005,
+        43.082480000000004
+      ],
+      "id": "vtdaytrip",
+      "class": "car",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/vt-daytrip.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "vtdaytrip"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        25.85678,
+        47.51755000000001,
+        26.25467,
+        47.75914
+      ],
+      "id": "suceavadaytrip",
+      "class": "car",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/suceava-day-trip.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "suceavadaytrip"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        26.686870000000003,
+        39.06387,
+        29.965670000000003,
+        41.07612
+      ],
+      "id": "istanbulbergama",
+      "class": "bus",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/istanbul-bergama.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "istanbulbergama"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        28.337560000000003,
+        36.62386,
+        29.230290000000004,
+        37.7843
+      ],
+      "id": "pamakkalefethiye",
+      "class": "bus",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/pamakkale-fethiye.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "pamakkalefethiye"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        27.37263,
+        37.786910000000006,
+        29.116730000000004,
+        37.952600000000004
+      ],
+      "id": "selcukdenizli",
+      "class": "train",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/selcuk-denizli.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "selcukdenizli"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        26.949520000000003,
+        37.950880000000005,
+        27.44938,
+        39.12068
+      ],
+      "id": "bergamaselcuk",
+      "class": "bus",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/bergama-selcuk.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "bergamaselcuk"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        29.115090000000002,
+        36.54733000000001,
+        29.1565,
+        36.62312
+      ],
+      "id": "fethiyeoludeniz",
+      "class": "bus",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/fethiye-oludeniz.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "fethiyeoludeniz"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        29.132400000000008,
+        36.55306,
+        31.979150000000004,
+        37.082800000000006
+      ],
+      "id": "fethiyealanya",
+      "class": "bus",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/fethiye-alanya.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "fethiyealanya"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        31.978220000000004,
+        36.031560000000006,
+        34.14361,
+        36.5572
+      ],
+      "id": "alanyakizkalesi",
+      "class": "bus",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/alanya-kizkalesi.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "alanyakizkalesi"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        33.31667,
+        35.340770000000006,
+        33.89233,
+        36.319720000000004
+      ],
+      "id": "tasucugirne",
+      "class": "ferry",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/tasucu-girne.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "tasucugirne"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        33.276160000000004,
+        35.17315,
+        33.364670000000004,
+        35.339600000000004
+      ],
+      "id": "girnenicosia",
+      "class": "bus",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/girne-nicosia.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "girnenicosia"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        32.422450000000005,
+        34.66702,
+        33.412000000000006,
+        35.170680000000004
+      ],
+      "id": "nicosiapaphos",
+      "class": "bus",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/nicosia-paphos.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "nicosiapaphos"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        33.88112,
+        36.31973,
+        38.78096,
+        37.28669
+      ],
+      "id": "tusucuurfa",
+      "class": "bus",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/tusucu-urfa.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "tusucuurfa"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        38.789460000000005,
+        37.146860000000004,
+        40.723650000000006,
+        37.32502
+      ],
+      "id": "urfamardin",
+      "class": "bus",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/urfa-mardin.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "urfamardin"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        34.82902,
+        37.32074,
+        40.724050000000005,
+        38.888180000000006
+      ],
+      "id": "mardingoreme",
+      "class": "bus",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/mardin-goreme.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "mardingoreme"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        38.13759,
+        37.150400000000005,
+        38.79184,
+        38.0319
+      ],
+      "id": "urfadaytrip",
+      "class": "car",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/urfa-daytrip.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "urfadaytrip"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        149.12782,
+        -35.28282,
+        151.21846000000002,
+        -33.854980000000005
+      ],
+      "id": "canberrasydney",
+      "class": "drive",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/canberra-sydney.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "canberrasydney"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        115.861,
+        -34.92101,
+        151.2056,
+        -30.46088
+      ],
+      "id": "sydneyperth",
+      "class": "train",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/sydney-perth.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "sydneyperth"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        115.74508000000002,
+        -32.052040000000005,
+        115.86008000000001,
+        -31.9427
+      ],
+      "id": "perthfremantle",
+      "class": "train",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/perth-fremantle.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "perthfremantle"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        115.0734,
+        -33.95365,
+        115.86108000000002,
+        -31.952930000000006
+      ],
+      "id": "perthmargaretriver",
+      "class": "car",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/perth-margaret-river.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "perthmargaretriver"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        130.97070000000002,
+        -25.376230000000003,
+        131.04636000000002,
+        -25.24201
+      ],
+      "id": "yularaularu",
+      "class": "drive",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/yulara-ularu.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "yularaularu"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        130.69186000000002,
+        -25.36079,
+        130.9978,
+        -25.24201
+      ],
+      "id": "yularakatatjuta",
+      "class": "drive",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/yulara-kata-tjuta.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "yularakatatjuta"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        130.98106384277344,
+        -25.355816067042372,
+        133.87677669525146,
+        -23.700886401602094
+      ],
+      "id": "katatjutaalicespring",
+      "class": "drive",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/kata-tjuta-alice-springs.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "katatjutaalicespring"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        133.3343,
+        -34.92165,
+        138.6422,
+        -23.69731
+      ],
+      "id": "alicespringstoadelai",
+      "class": "train",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/alice-springs-to-adelaide.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "alicespringstoadelai"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        138.58,
+        -38.109770000000005,
+        144.95100000000002,
+        -34.92101
+      ],
+      "id": "adelaidemelbourne",
+      "class": "train",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/adelaide-melbourne.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "adelaidemelbourne"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        144.89062,
+        -37.816570000000006,
+        149.13586,
+        -34.76639
+      ],
+      "id": "melbournecanberra",
+      "class": "drive",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/melbourne-canberra.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "melbournecanberra"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        139.0531,
+        35.23344,
+        139.76692,
+        35.68095
+      ],
+      "id": "tokyohakone",
+      "class": "train",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/tokyo-hakone.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "tokyohakone"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        135.758,
+        34.68525,
+        139.15550000000002,
+        35.37165
+      ],
+      "id": "hakonekyoto",
+      "class": "train",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/hakone-kyoto.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "hakonekyoto"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        123.6676025390625,
+        -25.355816067042372,
+        133.87677669525146,
+        10.295327777372998
+      ],
+      "id": "cebubohol",
+      "class": "ferry",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/cebu-bohol.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "cebubohol"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        123.6676025390625,
+        -25.355816067042372,
+        133.87677669525146,
+        10.295327777372998
+      ],
+      "id": "boholdaytrip",
+      "class": "car",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/bohol-daytrip.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "boholdaytrip"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        -5.47454,
+        55.936530000000005,
+        -3.19321,
+        56.459390000000006
+      ],
+      "id": "edinburghoban",
+      "class": "drive",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/edinburgh-oban.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "edinburghoban"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        -5.474500000000001,
+        56.415800000000004,
+        -5.1116600000000005,
+        56.81761
+      ],
+      "id": "obanfortwilliam",
+      "class": "car",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/oban-fort-william.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "obanfortwilliam"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        -5.906110000000001,
+        56.81987,
+        -4.783930000000001,
+        57.28829
+      ],
+      "id": "fortwilliambroadford",
+      "class": "drive",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/fort-william-broadford.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "fortwilliambroadford"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        -5.913880000000001,
+        57.23599000000001,
+        -5.01053,
+        57.89805000000001
+      ],
+      "id": "broadfordullapool",
+      "class": "drive",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/broadford-ullapool.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "broadfordullapool"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        -5.2410000000000005,
+        57.895410000000005,
+        -4.746370000000001,
+        58.568690000000004
+      ],
+      "id": "ullapooldurness",
+      "class": "drive",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/ullapool-durness.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "ullapooldurness"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        -4.746370000000001,
+        58.467510000000004,
+        -3.0686700000000005,
+        58.64830000000001
+      ],
+      "id": "durnessjohnogroats",
+      "class": "drive",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/durness-john-o-groats.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "durnessjohnogroats"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        -4.3670800000000005,
+        57.47933000000001,
+        -3.0689300000000004,
+        58.637629999999994
+      ],
+      "id": "johnogroatsinverness",
+      "class": "drive",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/john-o-groats-inverness.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "johnogroatsinverness"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        -4.682922363281249,
+        57.13810229016563,
+        -4.22611,
+        57.47933000000001
+      ],
+      "id": "lochness",
+      "class": "drive",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/loch-ness.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "lochness"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        -4.2571,
+        55.94574000000001,
+        -3.1934000000000005,
+        57.48264
+      ],
+      "id": "invernessedinburgh",
+      "class": "drive",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/inverness-edinburgh.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "invernessedinburgh"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        -3.40898,
+        55.9457,
+        -2.79508,
+        56.34037000000001
+      ],
+      "id": "edinburghsaintandrew",
+      "class": "drive",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/edinburgh-saint-andrews.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "edinburghsaintandrew"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        -2.9648600000000003,
+        56.340250000000005,
+        -2.0903300000000002,
+        57.1452
+      ],
+      "id": "saintandrewsaberdeen",
+      "class": "drive",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/saint-andrews-aberdeen.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "saintandrewsaberdeen"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        -3.1292000000000004,
+        57.14368,
+        -2.0909400000000002,
+        57.45499
+      ],
+      "id": "aberdeendufftown",
+      "class": "drive",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/aberdeen-dufftown.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "aberdeendufftown"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        -3.4582100000000002,
+        55.945710000000005,
+        -2.85826,
+        57.445920000000015
+      ],
+      "id": "dufftownedinburgh",
+      "class": "drive",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/dufftown-edinburgh.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "dufftownedinburgh"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        -4.245,
+        55.85978000000001,
+        -3.1884900000000007,
+        55.99651000000001
+      ],
+      "id": "edinburghglasgow",
+      "class": "train",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/edinburgh-glasgow.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "edinburghglasgow"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        -6.380653381347656,
+        57.2407929238512,
+        -5.904636383056641,
+        57.684881509020414
+      ],
+      "id": "isleofskye",
+      "class": "drive",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/isle-of-skye.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "isleofskye"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        -6.182041168212891,
+        57.494150933862315,
+        -6.166591644287109,
+        57.507017313689936
+      ],
+      "id": "thestorr",
+      "class": "hike",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/the-storr.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "thestorr"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        150.72292000000002,
+        -33.854980000000005,
+        151.63568,
+        -31.09185
+      ],
+      "id": "sydneytamworth",
+      "class": "drive",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/sydney-tamworth.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "sydneytamworth"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        150.93098,
+        -31.124190000000002,
+        153.61408,
+        -28.635650000000002
+      ],
+      "id": "tamworthbyronbay",
+      "class": "drive",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/tamworth-byron-bay.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "tamworthbyronbay"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        151.11202,
+        -33.854980000000005,
+        153.5618,
+        -28.168550000000003
+      ],
+      "id": "coolangattasydney",
+      "class": "drive",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/coolangatta-sydney.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "coolangattasydney"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        149.12742,
+        -35.69973,
+        150.29986000000002,
+        -35.178560000000004
+      ],
+      "id": "canberrasouthdurras",
+      "class": "drive",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/canberra-south-durras.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "canberrasouthdurras"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        30.277800000000003,
+        0.29950000000000004,
+        32.58227,
+        0.6781200000000001
+      ],
+      "id": "kampalankingo",
+      "class": "bus",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/kampala-nkingo.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "kampalankingo"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        30.08595,
+        0.1728,
+        30.334500000000002,
+        0.6562800000000001
+      ],
+      "id": "fortportalkasese",
+      "class": "bus",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/fort-portal-kasese.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "fortportalkasese"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        29.998700000000003,
+        -0.61548,
+        30.653420000000008,
+        0.1728
+      ],
+      "id": "kasesembarara",
+      "class": "car",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/kasese-mbarara.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "kasesembarara"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        29.936628341674805,
+        -1.2693320383066793,
+        30.653420000000008,
+        -0.61072
+      ],
+      "id": "mbararalakebunyoni",
+      "class": "bus",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/mbarara-lake-bunyoni.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "mbararalakebunyoni"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        29.923002719879147,
+        -1.288360252611777,
+        30.653420000000008,
+        -0.61072
+      ],
+      "id": "lakebunyonyibusharai",
+      "class": "ferry",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/lake-bunyonyi-bushara-island.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "lakebunyonyibusharai"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        29.911608695983887,
+        -1.3030549996558274,
+        30.653420000000008,
+        -0.61072
+      ],
+      "id": "lakebunyonyidaytrip",
+      "class": "ferry",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/lake-bunyonyi-daytrip.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "lakebunyonyidaytrip"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        30.29067993164062,
+        0.21697946183482172,
+        30.5419921875,
+        0.6852558796081203
+      ],
+      "id": "kibalenp",
+      "class": "national-park",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/kibale-np.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "kibalenp"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        32.46893,
+        0.059410000000000004,
+        32.58227,
+        0.31701
+      ],
+      "id": "entebbekampala",
+      "class": "car",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/entebbe-kampala.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "entebbekampala"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        29.80728149414062,
+        -0.6021770240159571,
+        30.36758422851562,
+        -0.11260979078219244
+      ],
+      "id": "queenelizabethnp",
+      "class": "national-park",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/queen-elizabeth-np.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "queenelizabethnp"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        29.582748413085938,
+        -1.128085678684204,
+        29.835433959960938,
+        -0.8809314764497128
+      ],
+      "id": "bwindinp",
+      "class": "national-park",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/bwindi-np.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "bwindinp"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        29.822731018066403,
+        -1.4006173190275082,
+        29.96795654296875,
+        -1.212182205033163
+      ],
+      "id": "busharalake",
+      "class": "lake",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/bushara-lake.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "busharalake"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        29.634933471679684,
+        -1.9436063967713244,
+        30.05653381347656,
+        -1.2835763969178196
+      ],
+      "id": "kisorokigali",
+      "class": "bus",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/kisoro-kigali.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "kisorokigali"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        29.649696350097656,
+        -1.256546372461634,
+        29.98967170715332,
+        -1.1069753455656175
+      ],
+      "id": "kabalabwindi",
+      "class": "car",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/kabala-bwindi.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "kabalabwindi"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        29.67535972595215,
+        -1.3380646191208425,
+        29.741878509521484,
+        -1.1367528850868427
+      ],
+      "id": "bwindicyanika",
+      "class": "car",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/bwindi-cyanika.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "bwindicyanika"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        30.061360000000004,
+        -3.3400104010345473,
+        32.839508056640625,
+        -1.8894100000000003
+      ],
+      "id": "kigalimwanza",
+      "class": "bus",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/kigali-mwanza.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "kigalimwanza"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        32.83985137939453,
+        -2.536497878935954,
+        32.895469665527344,
+        -2.5179764822552757
+      ],
+      "id": "mwanzaferry",
+      "class": "ferry",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/mwanza-ferry.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "mwanzaferry"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        32.90164,
+        -3.549080000000001,
+        36.69113,
+        -2.15784
+      ],
+      "id": "mwanzaarusha",
+      "class": "car",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/mwanza-arusha.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "mwanzaarusha"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        36.69113,
+        -6.81402,
+        39.27939000000001,
+        -3.30555
+      ],
+      "id": "arushadaressalaam",
+      "class": "bus",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/arusha-dar-es-salaam.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "arushadaressalaam"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        39.13930892944335,
+        -6.82127310282852,
+        39.31011199951172,
+        -6.153227359195038
+      ],
+      "id": "daressalaamzanzibar",
+      "class": "ferry",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/dar-es-salaam-zanzibar.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "daressalaamzanzibar"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        33.8543701171875,
+        -3.6230713262356735,
+        35.9637451171875,
+        -1.4116003389233212
+      ],
+      "id": "serengetingorongirin",
+      "class": "national-park",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/serengeti-ngorongiri-np.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "serengetingorongirin"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        35.682220458984375,
+        -3.69776299594059,
+        35.85113525390625,
+        -3.369485560923647
+      ],
+      "id": "manyaranp",
+      "class": "national-park",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/manyara-np.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "manyaranp"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        103.76518249511717,
+        1.295589649766072,
+        103.87435913085936,
+        1.453472622873722
+      ],
+      "id": "singaporemalaysia",
+      "class": "train",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/singapore-malaysia.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "singaporemalaysia"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        104.28033828735352,
+        52.029102276,
+        105.417115864,
+        52.321914005
+      ],
+      "id": "bolshoegoloustnoe",
+      "class": "car",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/bolshoe-goloustnoe.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "bolshoegoloustnoe"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        105.779176634,
+        47.553519678,
+        107.531912244,
+        47.923194698
+      ],
+      "id": "hustai",
+      "class": "car",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/hustai.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "hustai"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        105.78460693359374,
+        47.57467282332527,
+        106.25564575195312,
+        47.8362052557492
+      ],
+      "id": "hustainp",
+      "class": "national-park",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/hustai-np.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "hustainp"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        130.65765380859375,
+        -25.415989389177113,
+        131.3690185546875,
+        -25.080623772444827
+      ],
+      "id": "ularukatatjuta",
+      "class": "national-park",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/ularu-kata-tjuta.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "ularukatatjuta"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        33.469280000000005,
+        -8.913720000000001,
+        39.27939000000001,
+        -6.625800000000001
+      ],
+      "id": "darmbeya",
+      "class": "bus",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/dar-mbeya.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "darmbeya"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        34.01388,
+        -11.66079,
+        34.30097,
+        -11.460820000000002
+      ],
+      "id": "mzuzunkhatabay",
+      "class": "car",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/mzuzu-nkhata-bay.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "mzuzunkhatabay"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        33.469280000000005,
+        -11.462370000000002,
+        34.21250000000001,
+        -8.901340000000001
+      ],
+      "id": "mbeyamzuzu",
+      "class": "bus",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/mbeya-mzuzu.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "mbeyamzuzu"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        34.107310000000005,
+        -11.951586026638054,
+        34.30097,
+        -11.60716
+      ],
+      "id": "nkhatabaykande",
+      "class": "bus",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/nkhata-bay-kande.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "nkhatabaykande"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        34.110403060913086,
+        -11.951586026638054,
+        34.12353515625,
+        -11.936554956046324
+      ],
+      "id": "kandetobeach",
+      "class": "hike",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/kande-to-beach.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "kandetobeach"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        33.75549316406251,
+        -13.989874772268987,
+        34.39029,
+        -11.935880000000003
+      ],
+      "id": "kandelilongwe",
+      "class": "bus",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/kande-lilongwe.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "kandelilongwe"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        32.64551,
+        -14.02791,
+        33.780570000000004,
+        -13.63901
+      ],
+      "id": "lilongwechipata",
+      "class": "bus",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/lilongwe-chipata.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "lilongwechipata"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        28.28141,
+        -15.416810000000002,
+        32.64551,
+        -13.626280000000001
+      ],
+      "id": "chipatalusaka",
+      "class": "bus",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/chipata-lusaka.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "chipatalusaka"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        25.851000000000003,
+        -17.853070000000002,
+        28.283260000000002,
+        -15.416810000000002
+      ],
+      "id": "lusakalivingstone",
+      "class": "bus",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/lusaka-livingstone.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "lusakalivingstone"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        30.88531494140625,
+        -13.792738835406128,
+        32.1514892578125,
+        -12.369514563173915
+      ],
+      "id": "southluangwanp",
+      "class": "national-park",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/south-luangwa-np.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "southluangwanp"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        23.87603759765625,
+        -19.329286698998818,
+        25.367431640625,
+        -17.790535393588964
+      ],
+      "id": "chobenp",
+      "class": "national-park",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/chobe-np.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "chobenp"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        25.854778289794922,
+        -17.929089201618645,
+        25.866966247558594,
+        -17.844466567222028
+      ],
+      "id": "livingstonevicfalls",
+      "class": "car",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/livingstone-vic-falls.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "livingstonevicfalls"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        25.738563537597653,
+        -17.957668803529653,
+        25.88327407836914,
+        -17.811782954958765
+      ],
+      "id": "vicfallsnp",
+      "class": "national-park",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/vic-falls-np.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "vicfallsnp"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        -155.797119140625,
+        19.059521889847343,
+        -155.01502990722653,
+        19.547496268862822
+      ],
+      "id": "volcanonp",
+      "class": "national-park",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/volcano-np.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "volcanonp"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        -155.94079971313477,
+        19.47541273652657,
+        -155.91676712036133,
+        19.4869029484934
+      ],
+      "id": "kealakekuanp",
+      "class": "national-park",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/kealakekua-np.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "kealakekuanp"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        25.160880088806152,
+        -17.854597269011563,
+        25.854263305664062,
+        -17.76871315080057
+      ],
+      "id": "livingstonekasane",
+      "class": "car",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/livingstone-kasane.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "livingstonekasane"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        25.15679,
+        -20.21461,
+        26.182470000000002,
+        -17.79025
+      ],
+      "id": "kasanegweta",
+      "class": "car",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/kasane-gweta.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "kasanegweta"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        23.421940000000003,
+        -20.32945,
+        25.264660000000003,
+        -19.98695
+      ],
+      "id": "gwetamaun",
+      "class": "car",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/gweta-maun.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "gwetamaun"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        17.07897,
+        -22.586450000000003,
+        23.421940000000003,
+        -19.98695
+      ],
+      "id": "maunwindhoek",
+      "class": "car",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/maun-windhoek.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "maunwindhoek"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        14.35089111328125,
+        -19.48730751856426,
+        17.1661376953125,
+        -18.497842796761336
+      ],
+      "id": "etoshanp",
+      "class": "national-park",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/etosha-np.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "etoshanp"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        15.874557495117188,
+        -20.110424814293314,
+        16.154708862304688,
+        -19.179868262224076
+      ],
+      "id": "outjoetosha",
+      "class": "car",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/outjo-etosha.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "outjoetosha"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        16.154510000000002,
+        -22.574720000000003,
+        17.08096,
+        -20.109090000000002
+      ],
+      "id": "windhoekoutjo",
+      "class": "car",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/windhoek-outjo.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "windhoekoutjo"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        23.149807684,
+        -19.983209047,
+        23.494096185,
+        -19.345231388
+      ],
+      "id": "scenicflight",
+      "class": "plane",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/scenic-flight.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "scenicflight"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        23.58440101,
+        -19.70358547,
+        23.59407165,
+        -19.690412326
+      ],
+      "id": "okavangocanoe",
+      "class": "ferry",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/okavango-canoe.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "okavangocanoe"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        23.343302611,
+        -20.075355904,
+        23.632928011,
+        -19.703390546
+      ],
+      "id": "okavangodrive",
+      "class": "car",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/okavango-drive.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "okavangodrive"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        23.580352592,
+        -19.69062801,
+        23.594113199,
+        -19.680073987
+      ],
+      "id": "okavangowalk",
+      "class": "hike",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/okavango-walk.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "okavangowalk"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        15.050926208496094,
+        -20.041579222186243,
+        16.09067916870117,
+        -19.594402043388495
+      ],
+      "id": "outjootjitotongwe",
+      "class": "car",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/outjo-otjitotongwe.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "outjootjitotongwe"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        14.825706481933592,
+        -21.84174210516326,
+        15.260353088378904,
+        -19.615424335571735
+      ],
+      "id": "otjitotongwespitzkop",
+      "class": "car",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/otjitotongwe-spitzkoppe.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "otjitotongwespitzkop"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        14.522209167480469,
+        -22.676748056714803,
+        15.359230041503904,
+        -21.840148709589577
+      ],
+      "id": "spitzkoppeswakopmund",
+      "class": "car",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/spitzkoppe-swakopmund.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "spitzkoppeswakopmund"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        15.916287933,
+        -19.302955901,
+        16.49614718,
+        -18.929762246
+      ],
+      "id": "etoshagamedrive",
+      "class": "car",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/etosha-game-drive.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "etoshagamedrive"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        31.743775418,
+        -13.63531036786374,
+        32.6458740234375,
+        -13.051641118
+      ],
+      "id": "chipataluangwa",
+      "class": "car",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/chipata-luangwa.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "chipataluangwa"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        14.521788291,
+        -22.616228379,
+        14.637198413,
+        -22.500576734
+      ],
+      "id": "skydive",
+      "class": "plane",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/skydive.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "skydive"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        14.533649247000001,
+        -22.718994493,
+        14.586369424,
+        -22.563946762
+      ],
+      "id": "sandboardingskydivin",
+      "class": "car",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/sandboarding-skydiving-drive.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "sandboardingskydivin"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        14.533624649047852,
+        -27.968774908,
+        17.953206948,
+        -22.665105821933007
+      ],
+      "id": "swakopmundfishriver",
+      "class": "car",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/swakopmund-fish-river.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "swakopmundfishriver"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        17.605891227722168,
+        -27.59477475751801,
+        17.61533260345459,
+        -27.577087732770497
+      ],
+      "id": "fishrivercanyonwalk",
+      "class": "hike",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/fish-river-canyon-walk.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "fishrivercanyonwalk"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        14.533624649047852,
+        -28.510332505222394,
+        17.953206948,
+        -22.665105821933007
+      ],
+      "id": "aiaisrichtersveldtra",
+      "class": "national-park",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/ai-ais-richtersveld-transfrontier-park.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "aiaisrichtersveldtra"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        14.407882690429688,
+        -26.685502511615574,
+        16.409454345703125,
+        -22.58168054340601
+      ],
+      "id": "namibnaukluftnationa",
+      "class": "national-park",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/namib-naukluft-national-park.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "namibnaukluftnationa"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        17.389097636,
+        -28.771217302000004,
+        17.795096868,
+        -27.547684355
+      ],
+      "id": "fishriverorangeriver",
+      "class": "car",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/fish-river-orange-river.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "fishriverorangeriver"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        17.498336953,
+        -28.701759640000002,
+        17.562812266,
+        -28.687196206
+      ],
+      "id": "orangerivercanoe",
+      "class": "ferry",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/orange-river-canoe.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "orangerivercanoe"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        17.498807346,
+        -31.900479447000002,
+        18.730326509,
+        -28.696496111
+      ],
+      "id": "orangeriverhighlands",
+      "class": "car",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/orange-river-highlands.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "orangeriverhighlands"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        18.422698974609375,
+        -33.9245599419849,
+        18.990211486816406,
+        -31.886740769258736
+      ],
+      "id": "highlandscapetown",
+      "class": "car",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/highlands-capetown.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "highlandscapetown"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        18.322628137,
+        -34.357375955,
+        18.481751091,
+        -33.907463387
+      ],
+      "id": "capeofgoodhope",
+      "class": "drive",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/cape-of-good-hope.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "capeofgoodhope"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        18.41601,
+        -33.9345,
+        18.86916,
+        -33.82101
+      ],
+      "id": "capetownstellenbosch",
+      "class": "drive",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/cape-town-stellenbosch.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "capetownstellenbosch"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        18.86916,
+        -34.41924,
+        19.30573,
+        -33.864200000000004
+      ],
+      "id": "stellenboschhermanus",
+      "class": "drive",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/stellenbosch-hermanus.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "stellenboschhermanus"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        19.31636810302734,
+        -34.62423841967155,
+        19.458932876586914,
+        -34.4411059274169
+      ],
+      "id": "hermanusgaansbai",
+      "class": "drive",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/hermanus-gaansbai.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "hermanusgaansbai"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        19.23647,
+        -34.442400000000006,
+        22.153630000000003,
+        -34.02349
+      ],
+      "id": "hermanusmosselbaai",
+      "class": "drive",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/hermanus-mosselbaai.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "hermanusmosselbaai"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        22.10002,
+        -34.18305,
+        24.920082092285153,
+        -33.932821061251225
+      ],
+      "id": "mosselbaaijefferysba",
+      "class": "drive",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/mosselbaai-jefferysbay.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "mosselbaaijefferysba"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        24.899826049804688,
+        -34.028193115452545,
+        26.331052780151364,
+        -30.995563005321035
+      ],
+      "id": "jefferysbayburgersdo",
+      "class": "drive",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/jefferys-bay-burgersdorp.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "jefferysbayburgersdo"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        26.32438,
+        -30.992340000000002,
+        27.5287,
+        -29.31012
+      ],
+      "id": "burgersdorpmaseru",
+      "class": "drive",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/burgersdorp-maseru.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "burgersdorpmaseru"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        -29.673469999999973,
+        27.4781,
+        -29.310110000000005,
+        27.88490999999992
+      ],
+      "id": "maserusemonkong",
+      "class": "drive",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/maseru-semonkong.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "maserusemonkong"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        28.04062843322754,
+        -29.869563780311804,
+        28.04706573486328,
+        -29.843621880595016
+      ],
+      "id": "semonkongwalk",
+      "class": "walk",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/semonkong-walk.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "semonkongwalk"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        28.049670000000013,
+        -26.212849999999985,
+        31.01501,
+        -25.32751
+      ],
+      "id": "pretoriuskopjohannes",
+      "class": "drive",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/pretoriuskop-johannesburg.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "pretoriuskopjohannes"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        27.4781,
+        -29.316239999999993,
+        28.612919999999974,
+        -26.9662374181723
+      ],
+      "id": "maseruvilliers",
+      "class": "drive",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/maseru-villiers.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "maseruvilliers"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        28.318829999999995,
+        -27.03972,
+        31.50971000000003,
+        -25.384819999999962
+      ],
+      "id": "villiersmalelane",
+      "class": "drive",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/villiers-malelane.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "villiersmalelane"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        31.262145076,
+        -25.480909033,
+        31.971951093000005,
+        -24.951035707
+      ],
+      "id": "krugergamedrive",
+      "class": "drive",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/kruger-game-drive.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "krugergamedrive"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        18.377256989479065,
+        -33.90582702313172,
+        18.440208435058594,
+        -33.7979437118641
+      ],
+      "id": "robbenislandferry",
+      "class": "ferry",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/robben-island-ferry.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "robbenislandferry"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        29.88680362701416,
+        -0.20985556411611567,
+        29.90899085998535,
+        -0.18543687871614895
+      ],
+      "id": "qeboattrip",
+      "class": "ferry",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/qe-boat-trip.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "qeboattrip"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        29.727630615234375,
+        -0.5692197621338572,
+        30.123825073242188,
+        0.008411407440493212
+      ],
+      "id": "qegamedrive",
+      "class": "car",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/qe-game-drive.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "qegamedrive"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        56.23204,
+        57.405470000000015,
+        56.997019999999985,
+        58.00356
+      ],
+      "id": "permkungur",
+      "class": "bus",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/perm-kungur.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "permkungur"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        126.45258,
+        35.92952999999999,
+        127.18925999999998,
+        37.47094
+      ],
+      "id": "incheoniksan",
+      "class": "bus",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/incheon-iksan.geojson",
+        "layer": "OGRGeoJSON"
+      },
+      "layer": null,
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "incheoniksan"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        126.95400000000001,
+        35.82427,
+        127.14815999999998,
+        35.94793
+      ],
+      "id": "iksanjeonju",
+      "class": "bus",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/iksan-jeonju.geojson",
+        "layer": "OGRGeoJSON"
+      },
+      "layer": null,
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "iksanjeonju"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        127.13266,
+        35.136930000000014,
+        129.09547999999987,
+        35.863929999999996
+      ],
+      "id": "jeonjubusan",
+      "class": "bus",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/jeonju-busan.geojson",
+        "layer": "OGRGeoJSON"
+      },
+      "layer": null,
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "jeonjubusan"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        126.8921000000001,
+        35.1143,
+        129.36212000000006,
+        37.55187
+      ],
+      "id": "busanseoul",
+      "class": "train",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/busan-seoul.geojson",
+        "layer": "OGRGeoJSON"
+      },
+      "layer": null,
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "busanseoul"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        135.758,
+        34.680440000000004,
+        135.82480000000004,
+        34.98565
+      ],
+      "id": "kyotonara",
+      "class": "train",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/kyoto-nara.geojson",
+        "layer": "OGRGeoJSON"
+      },
+      "layer": null,
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "kyotonara"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        132.31706142425537,
+        34.27785764881957,
+        132.32585906982422,
+        34.302393518804166
+      ],
+      "id": "miyajimahike",
+      "class": "hike",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/miyajima-hike.geojson",
+        "layer": "OGRGeoJSON"
+      },
+      "layer": null,
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "miyajimahike"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        121.04516000000001,
+        31.097410000000004,
+        121.4889,
+        31.2334
+      ],
+      "id": "shanghaizhujiajieo",
+      "class": "bus",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/shanghai-zhujiajieo.geojson",
+        "layer": "OGRGeoJSON"
+      },
+      "layer": "OGRGeoJSON",
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "shanghaizhujiajieo"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        120.6064,
+        31.24955,
+        121.45444,
+        31.38232
+      ],
+      "id": "shanghaisuzhou",
+      "class": "train",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/shanghai-suzhou.geojson",
+        "layer": "OGRGeoJSON"
+      },
+      "layer": null,
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "shanghaisuzhou"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        116.30819999999997,
+        31.19411,
+        121.3204,
+        39.86499000000001
+      ],
+      "id": "shanghaibeijing",
+      "class": "train",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/shanghai-beijing.geojson",
+        "layer": "OGRGeoJSON"
+      },
+      "layer": null,
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "shanghaibeijing"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        108.93409999999993,
+        34.37663999999997,
+        116.32112,
+        39.89505
+      ],
+      "id": "beijingxian",
+      "class": "train",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/beijing-xian.geojson",
+        "layer": "OGRGeoJSON"
+      },
+      "layer": null,
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "beijingxian"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        110.44176000000002,
+        29.11407,
+        110.56457999999999,
+        29.352139999999995
+      ],
+      "id": "zhangjiajiewulingyua",
+      "class": "bus",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/zhangjiajie-wulingyuan.geojson",
+        "layer": "OGRGeoJSON"
+      },
+      "layer": null,
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "zhangjiajiewulingyua"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        104.07079999999998,
+        29.610419999999998,
+        111.3622,
+        30.80368
+      ],
+      "id": "yichangchengdu",
+      "class": "train",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/yichang-chengdu.geojson",
+        "layer": "OGRGeoJSON"
+      },
+      "layer": null,
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "yichangchengdu"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        83.97248000000002,
+        27.68609,
+        85.31512,
+        28.209379999999996
+      ],
+      "id": "kathmandupokhara",
+      "class": "bus",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/kathmandu-pokhara.geojson",
+        "layer": "OGRGeoJSON"
+      },
+      "layer": null,
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "kathmandupokhara"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        85.315,
+        27.67132,
+        85.42817999999995,
+        27.70906
+      ],
+      "id": "kathmandubhaktapor",
+      "class": "bus",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/kathmandu-bhaktapor.geojson",
+        "layer": "OGRGeoJSON"
+      },
+      "layer": null,
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "kathmandubhaktapor"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        85.42244,
+        27.67201,
+        85.51971999999998,
+        27.718509999999995
+      ],
+      "id": "bhaktapornagarkot",
+      "class": "bus",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/bhaktapor-nagarkot.geojson",
+        "layer": "OGRGeoJSON"
+      },
+      "layer": null,
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "bhaktapornagarkot"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        83.26757000000005,
+        26.76002,
+        84.56187999999995,
+        28.20953
+      ],
+      "id": "pokharagorakhpur",
+      "class": "bus",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/pokhara-gorakhpur.geojson",
+        "layer": "OGRGeoJSON"
+      },
+      "layer": null,
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "pokharagorakhpur"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        82.98646000000004,
+        25.32686000000001,
+        83.92906000000002,
+        26.75971
+      ],
+      "id": "gorakhpurvaranasi",
+      "class": "train",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/gorakhpur-varanasi.geojson",
+        "layer": "OGRGeoJSON"
+      },
+      "layer": null,
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "gorakhpurvaranasi"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        78.01804999999999,
+        25.32686,
+        82.98646,
+        27.2281
+      ],
+      "id": "varanasiagra",
+      "class": "train",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/varanasi-agra.geojson",
+        "layer": "OGRGeoJSON"
+      },
+      "layer": null,
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "varanasiagra"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        75.78505999999999,
+        26.834849999999996,
+        78.01805,
+        27.241500000000002
+      ],
+      "id": "agrajaipur",
+      "class": "train",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/agra-jaipur.geojson",
+        "layer": "OGRGeoJSON"
+      },
+      "layer": null,
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "agrajaipur"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        73.04001,
+        26.29127,
+        75.78506,
+        27.059380000000004
+      ],
+      "id": "jaipurjodhpur",
+      "class": "train",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/jaipur-jodhpur.geojson",
+        "layer": "OGRGeoJSON"
+      },
+      "layer": null,
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "jaipurjodhpur"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        72.02102000000004,
+        19.018780000000003,
+        73.18074000000007,
+        26.28357
+      ],
+      "id": "jodhpurmumbai",
+      "class": "train",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/jodhpur-mumbai.geojson",
+        "layer": "OGRGeoJSON"
+      },
+      "layer": null,
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "jodhpurmumbai"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        72.83224,
+        15.267419999999996,
+        73.96989999999997,
+        19.191439999999997
+      ],
+      "id": "mumbaimadgaon",
+      "class": "train",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/mumbai-madgaon.geojson",
+        "layer": "OGRGeoJSON"
+      },
+      "layer": null,
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "mumbaimadgaon"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        73.95806,
+        14.995899999999997,
+        74.05055999999996,
+        15.27361
+      ],
+      "id": "madgaoncanacona",
+      "class": "car",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/madgaon-canacona.geojson",
+        "layer": "OGRGeoJSON"
+      },
+      "layer": null,
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "madgaoncanacona"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        83.68952929973602,
+        28.296455102964476,
+        83.81027698516846,
+        28.401258296009342
+      ],
+      "id": "poonhilltrek",
+      "class": "hike",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/poon-hill-trek.geojson",
+        "layer": "OGRGeoJSON"
+      },
+      "layer": null,
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "poonhilltrek"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        28.21283,
+        83.76783999999999,
+        28.301030000000008,
+        83.98420000000002
+      ],
+      "id": "pokharanayapul",
+      "class": "car",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/pokhara-nayapul.geojson",
+        "layer": "OGRGeoJSON"
+      },
+      "layer": null,
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "pokharanayapul"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        73.81413459777832,
+        14.99712643697467,
+        74.04107093811035,
+        15.398824587911719
+      ],
+      "id": "patnamvasco",
+      "class": "car",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/patnam-vasco.geojson",
+        "layer": "OGRGeoJSON"
+      },
+      "layer": null,
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "patnamvasco"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        110.48160552978516,
+        28.17810590010895,
+        113.01086425781249,
+        29.602267467098955
+      ],
+      "id": "changshazhangjiajie",
+      "class": "train",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/changsha-zhangjiajie.geojson",
+        "layer": "OGRGeoJSON"
+      },
+      "layer": null,
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "changshazhangjiajie"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        111.29081726074219,
+        29.59958083517372,
+        111.64169311523438,
+        30.77067535039188
+      ],
+      "id": "zhangjiajieyichang",
+      "class": "train",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/zhangjiajie-yichang.geojson",
+        "layer": "OGRGeoJSON"
+      },
+      "layer": null,
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "zhangjiajieyichang"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        110.41727542877197,
+        29.320697852717185,
+        110.53147315979004,
+        29.384587023602055
+      ],
+      "id": "zhangjiajiewalkingro",
+      "class": "hike",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/zhangjiajie-walking-routes.geojson",
+        "layer": "OGRGeoJSON"
+      },
+      "layer": null,
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "zhangjiajiewalkingro"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        110.47834396362305,
+        29.362428603584615,
+        110.48804283142088,
+        29.373125084483213
+      ],
+      "id": "zhangjiajietrain",
+      "class": "train",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/zhangjiajie-train.geojson",
+        "layer": "OGRGeoJSON"
+      },
+      "layer": null,
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "zhangjiajietrain"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        110.42328357696533,
+        29.344090501282206,
+        110.53108692169188,
+        29.39529987104639
+      ],
+      "id": "zhangjiajiebusroutes",
+      "class": "bus",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/zhangjiajie-bus-routes.geojson",
+        "layer": "OGRGeoJSON"
+      },
+      "layer": null,
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "zhangjiajiebusroutes"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        110.49551010131836,
+        29.378136335767607,
+        110.50623893737793,
+        29.393916425395645
+      ],
+      "id": "zhangjiajiecablecar",
+      "class": "cablecar",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/zhangjiajie-cablecar.geojson",
+        "layer": "OGRGeoJSON"
+      },
+      "layer": null,
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "zhangjiajiecablecar"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        110.4045295715332,
+        29.31469215697947,
+        110.50838470458983,
+        29.399674426695036
+      ],
+      "id": "zhangjiajienp",
+      "class": "national-park",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/zhangjiajie-np.geojson",
+        "layer": "OGRGeoJSON"
+      },
+      "layer": "OGRGeoJSON",
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "zhangjiajienp"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        126.95400000000001,
+        35.90238,
+        127.33674000000003,
+        36.11856
+      ],
+      "id": "iksandaedunsan",
+      "class": "car",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/iksan-daedunsan.geojson",
+        "layer": "OGRGeoJSON"
+      },
+      "layer": null,
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "iksandaedunsan"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        127.31879711151123,
+        36.116426877263194,
+        127.33162879943846,
+        36.125258031471866
+      ],
+      "id": "daedunsan",
+      "class": "hike",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/daedunsan.geojson",
+        "layer": "OGRGeoJSON"
+      },
+      "layer": null,
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "daedunsan"
+    }
+  ],
+  "scale": 1,
+  "metatile": 2,
+  "legend": "",
+  "name": "Where I’ve Been",
+  "description": "derp derp derp",
+  "attribution": ""
+}
