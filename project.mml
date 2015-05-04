@@ -4461,6 +4461,26 @@
       "srs": "",
       "advanced": {},
       "name": "daedunsan"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        126.95400000000001,
+        35.71865,
+        127.09095999999997,
+        35.94793
+      ],
+      "id": "iksangeumsansa",
+      "class": "car",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/iksan-geumsansa.geojson",
+        "layer": "OGRGeoJSON"
+      },
+      "layer": null,
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "iksangeumsansa"
     }
   ],
   "scale": 1,
