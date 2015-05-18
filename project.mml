@@ -4481,6 +4481,66 @@
       "srs": "",
       "advanced": {},
       "name": "iksangeumsansa"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        126.49645328521727,
+        33.348598000970235,
+        126.53400421142577,
+        33.3624704441919
+      ],
+      "id": "mthallasanwalk",
+      "class": "hike",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/mt-hallasan-walk.geojson",
+        "layer": "OGRGeoJSON"
+      },
+      "layer": null,
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "mthallasanwalk"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        126.45452499389648,
+        33.24031172292649,
+        126.62627220153809,
+        33.51323958718722
+      ],
+      "id": "jejudrivingroutes",
+      "class": "car",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/jeju-driving-routes.geojson",
+        "layer": "OGRGeoJSON"
+      },
+      "layer": null,
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "jejudrivingroutes"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        126.55838012695311,
+        33.23560954974507,
+        126.56365871429445,
+        33.24026685605683
+      ],
+      "id": "seogwidongwalk",
+      "class": "hike",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/seogwidong-walk.geojson",
+        "layer": "OGRGeoJSON"
+      },
+      "layer": null,
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "seogwidongwalk"
     }
   ],
   "scale": 1,
