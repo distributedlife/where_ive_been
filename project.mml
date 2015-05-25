@@ -4541,12 +4541,33 @@
       "srs": "",
       "advanced": {},
       "name": "seogwidongwalk"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        126.474609375,
+        35.69271580036533,
+        126.95663452148438,
+        35.95494280731111
+      ],
+      "id": "iksanseawall",
+      "class": "car",
+      "Datasource": {
+        "file": "/Users/distributedlife/projects/tilemill/iksan-sea-wall.geojson",
+        "layer": "OGRGeoJSON"
+      },
+      "layer": null,
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "iksanseawall"
     }
   ],
   "scale": 1,
   "metatile": 2,
   "legend": "",
   "name": "Where I’ve Been",
-  "description": "derp derp derp",
-  "attribution": ""
+  "description": "A map of where I’ve been. Currently containing 2013-2014 journeys.",
+  "attribution": "Ryan Boucher",
+  "version": "1.0.0"
 }
